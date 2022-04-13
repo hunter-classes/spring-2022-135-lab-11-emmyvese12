@@ -22,4 +22,6 @@ int main(){
     std::cout << "Username-->Display Name(handle): " << std::endl;  
     std::cout << p2.getUsername() << std::endl; // tarma1
     std::cout << p2.getFullName() << std::endl; // Tarma Roving (@tarma1)
+
+    return 0;
 }
