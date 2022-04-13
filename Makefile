@@ -1,6 +1,9 @@
 main: main.o profile.o
 	g++ -o main main.o profile.o
 
+tests: tests.cpp
+	g++ -o tests tests.cpp 
+
 main.o: main.cpp profile.cpp profile.h
 	g++ -c main.cpp
 
