@@ -14,4 +14,4 @@ profile.o: profile.cpp profile.h
 	g++ -c profile.cpp
 
 clean:
-	rm -f main main.o tests.o profile.o
+	rm -f main tests main.o tests.o profile.o
