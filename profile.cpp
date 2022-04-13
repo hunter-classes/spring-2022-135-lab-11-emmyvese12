@@ -16,6 +16,6 @@ void Profile::setDisplayName(std::string dspn){
 }
 
 //member initializer list
-Profile::Profile(std::string usrn, std::string dspn) : username(usrn), displayname(dspn) { } //non-default constructor w parameters
+Profile::Profile(std::string usrn, std::string dspn) : username(usrn), displayname(dspn) { } //non-default constructor w/ parameters
 
 Profile::Profile() : username(""), displayname("") { } //default construct that initializes it // (username="", displayname="")
