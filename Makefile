@@ -1,17 +1,17 @@
 main: main.o profile.o
 	g++ -o main main.o profile.o
 
-tests: tests.cpp
-	g++ -o tests tests.cpp 
+tests: tests.o
+	g++ -o tests tests.o
 
 main.o: main.cpp profile.cpp profile.h
-	g++ -c main.cpp
+	g++ -std=c++11 -c main.cpp
 
 tests.o: tests.cpp doctest.h profile.h
-	g++ -c tests.cpp
+	g++ -std=c++11 -c tests.cpp
 
 profile.o: profile.cpp profile.h
-	g++ -c profile.cpp
+	g++ -std=c++11 -c profile.cpp
 
 clean:
-	rm -f main main.o profile.o
+	rm -f main main.o tests.o profile.o
