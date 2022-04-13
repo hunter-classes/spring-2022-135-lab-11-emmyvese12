@@ -7,7 +7,7 @@ std::string Profile::getUsername(){
 }
 
 std::string Profile::getFullName(){
-    std::string output = displayname + "(@" + username + ")";
+    std::string output = displayname + " (@" + username + ")";
     return output; //prints the format of displayname and handle
 }
 
