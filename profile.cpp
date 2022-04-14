@@ -2,6 +2,8 @@
 #include <string>
 #include "profile.h"
 
+//TASK A
+
 std::string Profile::getUsername(){
     return username;
 }
