@@ -6,8 +6,7 @@
 
 //TASK B
 
-//private class function
-
+//private class function Network::
 // Returns user ID (index in the 'profiles' array) by their username
 int Network::findID(std::string usrn){
 
