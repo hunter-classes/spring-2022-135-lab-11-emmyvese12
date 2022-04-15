@@ -49,5 +49,40 @@ int main(){
     std::cout << "\n------------------------------------" << std::endl;
     std::cout << "Username: yoshi\nDisplay Name: Yoshi\n" << "Is this user added? " << nw.addUser("yoshi", "Yoshi") << " == false" << std::endl;     // false (0) b/c the array is full
 
+
+    //task C
+    Network nw1;
+    // add three users
+    nw1.addUser("mario", "Mario");
+    nw1.addUser("luigi", "Luigi");
+    nw1.addUser("yoshi", "Yoshi");
+
+    // make them follow each other
+    nw1.follow("mario", "luigi");
+    nw1.follow("mario", "yoshi");
+    nw1.follow("luigi", "mario");
+    nw1.follow("luigi", "yoshi");
+    nw1.follow("yoshi", "mario");
+    nw1.follow("yoshi", "luigi");
+
+    // add a user who does not follow others
+    nw1.addUser("wario", "Wario");
+
+    // add clone users who follow @mario
+    for(int i = 2; i < 6; i++) {
+        std::string usrn = "mario" + std::to_string(i);
+        std::string dspn = "Mario " + std::to_string(i);
+        nw1.addUser(usrn, dspn);
+        nw1.follow(usrn, "mario");
+    }
+
+    // additionally, make @mario2 follow @luigi
+    nw1.follow("mario2", "luigi");
+
+
+    std::cout << "\n===============Task C===============" << std::endl;
+    nw1.printDot();
+
+
     return 0;
 }
