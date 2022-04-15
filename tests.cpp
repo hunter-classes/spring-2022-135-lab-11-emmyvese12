@@ -31,3 +31,25 @@ TEST_CASE("Adding User to the Network for TASK B"){
     CHECK(nw5.addUser("liz zy", "Liz") == 0);
     CHECK(nw5.addUser("drewdrew", "D") == 1);
 }
+
+//task C
+TEST_CASE("Testing if Users Follow Other Users for TASK C"){
+    Network net;
+    net.addUser("marc", "MarcS");
+    net.addUser("steven", "GiftShopSteven");
+    net.addUser("layla", "Layla");
+    net.addUser("khonshu", "Khonshu");
+
+    CHECK(net.follow("marc", "steven") == true);
+    CHECK(net.follow("marc", "layla") == true);
+    CHECK(net.follow("layla", "steven") == true);
+    CHECK(net.follow("khonshu", "marc") == true);
+    CHECK(net.follow("khonshu", "steven") == true);
+    CHECK(net.follow("khonshu", "layla") == true);
+    CHECK(net.follow("steven", "marc") == true);
+    CHECK(net.follow("steven", "layla") == true);
+    CHECK(net.follow("khonshu", "ammit") == false);
+    CHECK(net.follow("arthur", "ammit") == false);
+    CHECK(net.follow("ammit", "layla") == false);
+
+}
