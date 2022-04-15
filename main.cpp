@@ -1,3 +1,9 @@
+/*
+Emmy Veselinov
+CSCI 135 Lab-11
+Classes and Programming a Social Network
+*/
+
 #include <iostream>
 #include <string>
 #include "profile.h"
@@ -8,19 +14,19 @@ int main(){
     //task A
     std::cout << "===============Task A===============" << std::endl;
     Profile p1("marco", "Marco");
-    std::cout << "Username-->Display Name(handle): " << std::endl;
+    std::cout << "Username//Display Name(handle): " << std::endl;
     std::cout << p1.getUsername() << std::endl; // marco
     std::cout << p1.getFullName() << std::endl; // Marco (@marco)
     std::cout << "\n------------------------------------" << std::endl;
 
     p1.setDisplayName("Marco Rossi"); 
-    std::cout << "Username-->Updated Display Name(handle): " << std::endl;
+    std::cout << "Username//Updated Display Name(handle): " << std::endl;
     std::cout << p1.getUsername() << std::endl; // marco
     std::cout << p1.getFullName() << std::endl; // Marco Rossi (@marco)
     std::cout << "\n------------------------------------" << std::endl;
     
     Profile p2("tarma1", "Tarma Roving"); 
-    std::cout << "Username-->Display Name(handle): " << std::endl;  
+    std::cout << "Username//Display Name(handle): " << std::endl;  
     std::cout << p2.getUsername() << std::endl; // tarma1
     std::cout << p2.getFullName() << std::endl; // Tarma Roving (@tarma1)
 
@@ -41,7 +47,7 @@ int main(){
     std::cout << "Username: mario-2\nDisplay Name: Mario2\n" << "Is this user added? " << nw.addUser("mario-2", "Mario2") << " == false" << std::endl;  // false (0)
     std::cout << "\n------------------------------------" << std::endl;
 
-    std::cout << "Username: marioi (the last i representing a number [2,19] in the for loop)\nDisplay Name: Marioi (the last i representing a number [2,19] in the for loop)\n"; 
+    std::cout << "Username: marioi (the last i representing a number in [2,19])\nDisplay Name: Marioi (the last i representing a number in[2,19])\n"; 
     for(int i = 2; i < 20; i++){
         std::cout << "Is this user added? " << nw.addUser("mario" + std::to_string(i), "Mario" + std::to_string(i)) << " == true" << std::endl;   // true (1)
     }
@@ -52,12 +58,10 @@ int main(){
 
     //task C
     Network nw1;
-    // add three users
     nw1.addUser("mario", "Mario");
     nw1.addUser("luigi", "Luigi");
     nw1.addUser("yoshi", "Yoshi");
 
-    // make them follow each other
     nw1.follow("mario", "luigi");
     nw1.follow("mario", "yoshi");
     nw1.follow("luigi", "mario");
@@ -65,10 +69,10 @@ int main(){
     nw1.follow("yoshi", "mario");
     nw1.follow("yoshi", "luigi");
 
-    // add a user who does not follow others
+    //this user does not follow others
     nw1.addUser("wario", "Wario");
 
-    // add clone users who follow @mario
+    //add clone users who follow @mario
     for(int i = 2; i < 6; i++) {
         std::string usrn = "mario" + std::to_string(i);
         std::string dspn = "Mario " + std::to_string(i);
@@ -76,13 +80,10 @@ int main(){
         nw1.follow(usrn, "mario");
     }
 
-    // additionally, make @mario2 follow @luigi
     nw1.follow("mario2", "luigi");
-
 
     std::cout << "\n===============Task C===============" << std::endl;
     nw1.printDot();
-
 
     return 0;
 }
