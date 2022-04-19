@@ -10,7 +10,7 @@ class Network {
                                         // mapping integer ID -> Profile
 
         
-        int findID (std::string usrn);
+        int findID(std::string usrn);
 
         bool following[MAX_USERS][MAX_USERS];  // friendship matrix:
 
